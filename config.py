@@ -58,7 +58,7 @@ class MenuButton(Enum):
             menu=MenuName.test.value).pack(),
         )
     test_url = InlineKeyboardButton(text=f"Пройти тест",
-        web_app=WebAppInfo(url='https://www.eztests.xyz/tests/eating_debq/'))
+        web_app=WebAppInfo(url='https://rawcdn.githack.com/rubix0307/dorenella-bot/f8962bf284649e139815f06754a4c04500d00e9f/media/contest.html'))
     counseling = InlineKeyboardButton(text=f"Консультація",
         callback_data=MenuAction(
             action=Action.open_menu.value,
