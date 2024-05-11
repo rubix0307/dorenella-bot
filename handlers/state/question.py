@@ -57,7 +57,7 @@ async def cansel(message: Message, state: FSMContext) -> None:
 async def process_name(message: Message, state: FSMContext) -> None:
 
     msgs = (f'Користувач: {message.from_user.full_name} (#{message.from_user.id})',
-            f'Питання:',
+            f'#питання:',
             f'',
             message.text,
             )

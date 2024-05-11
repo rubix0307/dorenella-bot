@@ -55,7 +55,7 @@ async def phone_number(message: Message, state: FSMContext) -> None:
             f'@{message.chat.username} (#{message.chat.id})',
             f'''Телефон: {hlink(clean_phone_number, url=f'http://t.me/{clean_phone_number}')}''',
             f'Замовив місячний супровід:',
-            f'',
+            f'#супровід',
             data.get('init_message'),
         )
         sent_messages = await send_admin_notification('\n'.join(notification_message))
