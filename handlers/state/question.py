@@ -1,16 +1,13 @@
-from typing import Any
-
-from aiogram import F, types
+from aiogram import F
 from aiogram.filters.command import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove
 from asgiref.sync import sync_to_async
-from django.db.models import Manager
 
+from common import send_admin_notification
 from config import Action, MenuAction
-from handlers.messages.common import send_admin_notification
-from ORM.models import User, Question as UserQuestion
+from ORM.models import Question as UserQuestion, User
 from run import bot, dp
 
 
@@ -56,15 +53,15 @@ async def cansel(message: Message, state: FSMContext) -> None:
 @dp.message(Question.question)
 async def process_name(message: Message, state: FSMContext) -> None:
 
-    msgs = (f'Користувач: {message.from_user.full_name} (#{message.from_user.id})',
-            f'#питання:',
-            f'',
-            message.text,
-            )
-    notification_message = '\n'.join(msgs)
-    # TODO
+    notification_message = [
+        f'#питання',
+        message.text,
+        f'',
+        f'Користувач: {message.chat.full_name} ',
+        f'@{message.chat.username} (#{message.chat.id})',
+    ]
 
-    sent_messages = await send_admin_notification(notification_message)
+    sent_messages = await send_admin_notification('\n'.join(notification_message))
 
     if sent_messages:
         users_data = await sync_to_async(list)(User.objects.filter(id=message.from_user.id))

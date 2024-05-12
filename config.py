@@ -10,6 +10,7 @@ class Action(Enum):
     open_menu = 'open'
     ask_question = 'ask_question'
     accompaniment_message = 'accompaniment_message'
+    counseling_message = 'counseling_message'
 
 class MenuName(Enum):
     trust = 'trust'
@@ -91,7 +92,7 @@ class MenuButton(Enum):
         )
     order_counseling = InlineKeyboardButton(text=f"Записатись",
         callback_data=MenuAction(
-            action=Action.open_menu.value,
+            action=Action.counseling_message.value,
             menu=MenuName.order_counseling.value).pack(),
         )
     accompaniment_detail = InlineKeyboardButton(text=f"Що входить у місячне введення?",

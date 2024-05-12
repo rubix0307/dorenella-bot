@@ -4,31 +4,8 @@ from aiogram.types import FSInputFile
 
 from config import Action, MenuAction, MenuKeyboard
 from handlers.messages.commands import start
-from handlers.messages.common import send_admin_notification
-from handlers.state.question import user_authorized
-from run import bot, dp
 from ORM.models import SystemText
-from aiogram.utils.markdown import *
-@dp.callback_query(MenuAction.filter(F.menu == 'order_counseling'))
-@user_authorized
-async def answer(callback_query: CallbackQuery, callback_data: MenuAction, *args, **kwargs):
-    message = callback_query.message
-
-    match callback_data.menu:
-        case 'order_counseling':
-            notification_message = (
-                f'Користувач: {message.chat.full_name} @{message.chat.username} (#{message.chat.id})',
-                f'Замовив консультацію',
-            )
-            sent_messages = await send_admin_notification('\n'.join(notification_message))
-
-            if sent_messages:
-                await message.answer('Ваше замовлення консультації було відправлено')
-            else:
-                await message.answer('Ваше замовлення консультації не було відправлено')
-
-            await callback_query.answer()
-
+from run import dp
 
 
 @dp.callback_query(MenuAction.filter(F.action == Action.open_menu.value))
