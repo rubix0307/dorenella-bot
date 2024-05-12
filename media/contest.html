@@ -1,23 +1,453 @@
-<html lang="en" style="height: 100svh;"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iframe With CSP</title>
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        frame-src https://www.eztests.xyz;
-        connect-src 'self' https://www.eztests.xyz;
-        img-src 'self';
-        script-src 'self';
-        style-src 'self';
-    ">
-    <style>
-        .google-auto-placed {
-            display: none;
+<html class="body-test"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/ez_styles.css?v=1.1" media="screen">
+    <link rel="icon" href="/static/dep_transp1.jpg">
+    <meta name="robots" content="index, follow">
+
+    <meta name="twitter:site" content="@EzTests">
+    <meta name="twitter:url" content="https://www.eztests.xyz">
+    <meta name="twitter:title" content="Голландський опитувальник харчової поведінки (DEBQ)">
+    <meta name="twitter:description" content="Голландський опитувальник харчової поведінки (DEBQ)">
+    <meta name="twitter:image" content="https://www.eztests.xyz/static/dep_transp1.jpg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EzTests.xyz">
+    <meta property="og:title" content="Голландський опитувальник харчової поведінки (DEBQ)">
+    <meta property="og:description" content="Шкала вигоряння спортсмена (DEBQ)">
+    <meta property="og:image" content="https://www.eztests.xyz/static/dep_transp1.jpg">
+    <meta property="fb:page_id" content="258067774601367">
+    <meta name="copyright" content="copyright © 2017-2023, EzTests.xyz">
+
+    <meta name="description" content="Голландський опитувальник харчової поведінки (DEBQ)">
+
+    <meta name="keywords" content="Голландський опитувальник харчової поведінки (DEBQ), автоматичний підрахунок DEBQ, тест на харчову поведінку онлайн, тест DEBQ, шкала DEBQ, автоматичний підрахунок тесту харчова поведінка, обмежувальна харчова поведінка, емоційна харчова поведінка, екстернальна харчова поведінка, Голландський опитувальник харчової поведінки онлайн">
+
+    <link rel="canonical" href="https://www.eztests.xyz/tests/eating_debq/">
+
+    <meta name="viewport" content="width=device-width, user-scalable=0.8">
+
+    <title> Голландський опитувальник харчової поведінки (DEBQ)</title>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-9209768242076821?href=https%3A%2F%2Fwww.eztests.xyz%2Ftests%2Feating_debq&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxWDOoW38QUz8NsOvxRqw4E93497jUMkxOFocG5EzbAGlTk0AdlF1UhsR-gO4Eii68T50_QbUSoOTaLaFS1jCXdeDWS-ozDnVp5c3qh2CbEGZg3MyLhzOx1EkCcCm04sZlsJU__YZA==?fccs=W1siQUtzUm9sX2VVYlFFdVZvaGZLRWNYVmppclRia2VrSUxaaU9fNmg0OGtRR3Boal9Xc3lhRUFBUkdsaXllV0VXOWNOblZrcFdLMFNYWkNqRzFGRTg0Mmk3SzBvV0VMVXd4YXo1UXJCMmI0dXJ3WHlvNkZHOWxybFRxeVRyNW5wcFMyXy13c2FTYVJvdEdxMGhxQ29EU3ZfeXRKM2FoSjZYZGFRPT0iXSxudWxsLFsiQ1AtY3hJQVAtY3hJQUVzQUNCRU5BMEVvQVBfZ0FFUGdBQ2dBSU5KQjdEN0ZiU0ZDd0g1emFMc0FNQWhIUnNDQVFvUUFBQVNCQW1BQlFBS1FJQVFDZ2tBUUZBU2dCQUFDQUFBQUlDWkJJUUlFQ0FBQUNVQUFRQUFBQUFBRUFBQUFBQUFJSUFBQWdBRUFBQUFJQUFBQ0FBQUFFQUFJQUFBQUVBQUFtQWdBQUlJQUNBQUFoQUFBQUFBQUFBQUFBQUFBQWdBQUFBQUFBQUFBQUFBQUFBQUFBUU9oUUQyRjJLMmtLRmtQQ21RV1lBUUJDaWpZRUFoUUFBQUFrQ0JJQUFnQVVnUUFnRklJQWdBSUZBQUFBQUFBQUFRRWdDUUFBUUFCQUFBSUFDZ0FBQUFBQUlBQUFBQUFBUVFBQUFBQUlBQUFBQUFBQUVBQUFBQUFBUUFBQUFJQUFCRWhDQUFRUUFFQUFBQUFBQVFBQUFBQUFBQUFBQUJBQUEiLCIyfjcwLjg5LjkzLjEwOC4xMjIuMTQ5LjE5Ni4yNTkuMzExLjMxMy4zMjMuMzU4LjQxNS40NDkuNDg2LjQ5NC40OTUuNTQwLjU3NC42MDkuODI3Ljg2NC45ODEuMTAyOS4xMDQ4LjEwNTEuMTA5NS4xMDk3LjExMjYuMTIwNS4xMjExLjEyNzYuMTMwMS4xMzY1LjE0MTUuMTQyMy4xNDQ5LjE1NzAuMTU3Ny4xNTk4LjE2NTEuMTcxNi4xNzM1LjE3NTMuMTc2NS4xODcwLjE4NzguMTg4OS4xOTU4LjIwNzIuMjI1My4yMjk5LjIzNTcuMjM3My4yNDE1LjI1MDYuMjUyNi4yNTY4LjI1NzEuMjU3NS4yNjI0LjI2Nzd-ZHYuIl0sbnVsbCxudWxsLG51bGwsWzE3MTU1MDA1NzcsNjY3MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbN11dLCJodHRwczovL3d3dy5lenRlc3RzLnh5ei90ZXN0cy9lYXRpbmdfZGVicS8iLG51bGwsW1s4LCJhVWRtYUlqRDNqVSJdLFs5LCJydSJdLFsxOCwiW1tbMF1dXSJdLFsyMCwiW251bGwsbnVsbCxbMzEwODIxNDZdLDQsMTFdIl0sWzE5LCIxIl0sWzE3LCJbMF0iXV1d"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxU810etNj4-gqKd99-L87JkooFBs5c0TeFycU-zigM3gUqnxVyvsMfV1LrIblQ87wLfd3I4NGWOB4rrDTJgeZUrG6Ls2NgXBpRsTfGjV5l5n7rDZm2FG6L91d1KZrdHb4IDGrWUbA==?fccs=W1siQUtzUm9sX2VVYlFFdVZvaGZLRWNYVmppclRia2VrSUxaaU9fNmg0OGtRR3Boal9Xc3lhRUFBUkdsaXllV0VXOWNOblZrcFdLMFNYWkNqRzFGRTg0Mmk3SzBvV0VMVXd4YXo1UXJCMmI0dXJ3WHlvNkZHOWxybFRxeVRyNW5wcFMyXy13c2FTYVJvdEdxMGhxQ29EU3ZfeXRKM2FoSjZYZGFRPT0iXSxudWxsLFsiQ1AtY3hJQVAtY3hJQUVzQUNCRU5BMEVvQVBfZ0FFUGdBQ2dBSU5KQjdEN0ZiU0ZDd0g1emFMc0FNQWhIUnNDQVFvUUFBQVNCQW1BQlFBS1FJQVFDZ2tBUUZBU2dCQUFDQUFBQUlDWkJJUUlFQ0FBQUNVQUFRQUFBQUFBRUFBQUFBQUFJSUFBQWdBRUFBQUFJQUFBQ0FBQUFFQUFJQUFBQUVBQUFtQWdBQUlJQUNBQUFoQUFBQUFBQUFBQUFBQUFBQWdBQUFBQUFBQUFBQUFBQUFBQUFBUU9oUUQyRjJLMmtLRmtQQ21RV1lBUUJDaWpZRUFoUUFBQUFrQ0JJQUFnQVVnUUFnRklJQWdBSUZBQUFBQUFBQUFRRWdDUUFBUUFCQUFBSUFDZ0FBQUFBQUlBQUFBQUFBUVFBQUFBQUlBQUFBQUFBQUVBQUFBQUFBUUFBQUFJQUFCRWhDQUFRUUFFQUFBQUFBQVFBQUFBQUFBQUFBQUJBQUEiLCIyfjcwLjg5LjkzLjEwOC4xMjIuMTQ5LjE5Ni4yNTkuMzExLjMxMy4zMjMuMzU4LjQxNS40NDkuNDg2LjQ5NC40OTUuNTQwLjU3NC42MDkuODI3Ljg2NC45ODEuMTAyOS4xMDQ4LjEwNTEuMTA5NS4xMDk3LjExMjYuMTIwNS4xMjExLjEyNzYuMTMwMS4xMzY1LjE0MTUuMTQyMy4xNDQ5LjE1NzAuMTU3Ny4xNTk4LjE2NTEuMTcxNi4xNzM1LjE3NTMuMTc2NS4xODcwLjE4NzguMTg4OS4xOTU4LjIwNzIuMjI1My4yMjk5LjIzNTcuMjM3My4yNDE1LjI1MDYuMjUyNi4yNTY4LjI1NzEuMjU3NS4yNjI0LjI2Nzd-ZHYuIl0sbnVsbCxudWxsLG51bGwsWzE3MTU1MDA1NzcsNzgxMDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5XSxudWxsLDEsbnVsbCwiZW4iXSwiaHR0cHM6Ly93d3cuZXp0ZXN0cy54eXovdGVzdHMvZWF0aW5nX2RlYnEvIixudWxsLFtbOCwiYVVkbWFJakQzalUiXSxbOSwicnUiXSxbMTgsIltbWzBdXV0iXSxbMjAsIltudWxsLG51bGwsWzMxMDgyMTQ2XSw0LDExXSJdLFsxOSwiMSJdLFsxNywiWzBdIl1dXQ"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxVlMuvBa-XKI6WSksw2_9Z0z0s5x4XqL14K13ze7zFL_ocC22l22TRDkH6HMbhOBHLkS1c3qQHuKWhNKkmbi0b6aiy0WS7AUD6VzPVrO68N_HaDZBhuj6Ra7y3MLSm7VqNOG_578w==?fccs=W1siQUtzUm9sX2VVYlFFdVZvaGZLRWNYVmppclRia2VrSUxaaU9fNmg0OGtRR3Boal9Xc3lhRUFBUkdsaXllV0VXOWNOblZrcFdLMFNYWkNqRzFGRTg0Mmk3SzBvV0VMVXd4YXo1UXJCMmI0dXJ3WHlvNkZHOWxybFRxeVRyNW5wcFMyXy13c2FTYVJvdEdxMGhxQ29EU3ZfeXRKM2FoSjZYZGFRPT0iXSxudWxsLFsiQ1AtY3hJQVAtY3hJQUVzQUNCRU5BMEVvQVBfZ0FFUGdBQ2dBSU5KQjdEN0ZiU0ZDd0g1emFMc0FNQWhIUnNDQVFvUUFBQVNCQW1BQlFBS1FJQVFDZ2tBUUZBU2dCQUFDQUFBQUlDWkJJUUlFQ0FBQUNVQUFRQUFBQUFBRUFBQUFBQUFJSUFBQWdBRUFBQUFJQUFBQ0FBQUFFQUFJQUFBQUVBQUFtQWdBQUlJQUNBQUFoQUFBQUFBQUFBQUFBQUFBQWdBQUFBQUFBQUFBQUFBQUFBQUFBUU9oUUQyRjJLMmtLRmtQQ21RV1lBUUJDaWpZRUFoUUFBQUFrQ0JJQUFnQVVnUUFnRklJQWdBSUZBQUFBQUFBQUFRRWdDUUFBUUFCQUFBSUFDZ0FBQUFBQUlBQUFBQUFBUVFBQUFBQUlBQUFBQUFBQUVBQUFBQUFBUUFBQUFJQUFCRWhDQUFRUUFFQUFBQUFBQVFBQUFBQUFBQUFBQUJBQUEiLCIyfjcwLjg5LjkzLjEwOC4xMjIuMTQ5LjE5Ni4yNTkuMzExLjMxMy4zMjMuMzU4LjQxNS40NDkuNDg2LjQ5NC40OTUuNTQwLjU3NC42MDkuODI3Ljg2NC45ODEuMTAyOS4xMDQ4LjEwNTEuMTA5NS4xMDk3LjExMjYuMTIwNS4xMjExLjEyNzYuMTMwMS4xMzY1LjE0MTUuMTQyMy4xNDQ5LjE1NzAuMTU3Ny4xNTk4LjE2NTEuMTcxNi4xNzM1LjE3NTMuMTc2NS4xODcwLjE4NzguMTg4OS4xOTU4LjIwNzIuMjI1My4yMjk5LjIzNTcuMjM3My4yNDE1LjI1MDYuMjUyNi4yNTY4LjI1NzEuMjU3NS4yNjI0LjI2Nzd-ZHYuIl0sbnVsbCxudWxsLG51bGwsWzE3MTU1MDA1NzgsNTA2MDAwMDAwXSxudWxsLG51bGwsbnVsbCxbbnVsbCxbNyw5LDZdLG51bGwsMSxudWxsLCJlbiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDFdLCJodHRwczovL3d3dy5lenRlc3RzLnh5ei90ZXN0cy9lYXRpbmdfZGVicS8iLG51bGwsW1s4LCJhVWRtYUlqRDNqVSJdLFs5LCJydSJdLFsxOCwiW1tbMF1dXSJdLFsyMCwiW251bGwsbnVsbCxbMzEwODIxNDZdLDQsMTFdIl0sWzE5LCIxIl0sWzE3LCJbMF0iXV1d"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+
+
+<body class="body-test" aria-hidden="false" style="padding: 0px 0px 154px;">
+
+<div class="test-page-header">
+
+    <h2>Голландський опитувальник харчової поведінки (DEBQ)</h2>
+
+    <div align="center">
+        <br>
+
+            <a href="/" class="home_link"> <b>Головна</b> </a>
+             <br>
+            (див. також: <br>
+            <a href="/tests/eating_ede_qs/" target="_blank" rel="noopener noreferrer" style="font-size: 15px;">Опитувальник обстеження розладів харчової поведінки, EDE-QS</a>)
+
+    </div>
+</div>
+
+<div class="intro" style=" ">
+    <br>
+
+    <b>Голландський опитувальник харчової поведінки</b> (Dutch Eating Behavior Questionnaire, DEBQ) створений для виявлення обмежувальної, емоційної та екстернальної харчової поведінки. Метою створення опитувальника було отримання простого та валідизованого інструменту для якісної та кількісної оцінки розладів харчової поведінки, пов’язаних з переїданням та супроводжуючим його ожирінням.<br>
+    <br>
+
+</div>
+
+<div class="q">
+    <h2> Текст </h2>
+
+    1. Якщо ви набрали вагу, ви їсте менше, ніж зазвичай?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q1" class="a1">Ніколи<br>
+        <input type="radio" name="q1" class="a2">Рідко<br>
+        <input type="radio" name="q1" class="a3">Іноді<br>
+        <input type="radio" name="q1" class="a4">Часто<br>
+        <input type="radio" name="q1" class="a5">Дуже часто<br>
+    </div>
+    2. Чи намагаєтесь ви їсти менше, ніж вам хотілося б під час звичайного прийому їжі?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q2" class="a1">Ніколи<br>
+        <input type="radio" name="q2" class="a2">Рідко<br>
+        <input type="radio" name="q2" class="a3">Іноді<br>
+        <input type="radio" name="q2" class="a4">Часто<br>
+        <input type="radio" name="q2" class="a5">Дуже часто<br>
+    </div>
+    3. Чи часто ви відмовляєтеся від запропонованої їжі чи напоїв через те, що турбуєтеся про свою вагу?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q3" class="a1">Ніколи<br>
+        <input type="radio" name="q3" class="a2">Рідко<br>
+        <input type="radio" name="q3" class="a3">Іноді<br>
+        <input type="radio" name="q3" class="a4">Часто<br>
+        <input type="radio" name="q3" class="a5">Дуже часто<br>
+    </div>
+    4. Чи стежите ви за тим, що саме їсте?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q4" class="a1">Ніколи<br>
+        <input type="radio" name="q4" class="a2">Рідко<br>
+        <input type="radio" name="q4" class="a3">Іноді<br>
+        <input type="radio" name="q4" class="a4">Часто<br>
+        <input type="radio" name="q4" class="a5">Дуже часто<br>
+    </div>
+    5. Ви навмисне вживаєте продукти, які сприяють схудненню?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q5" class="a1">Ніколи<br>
+        <input type="radio" name="q5" class="a2">Рідко<br>
+        <input type="radio" name="q5" class="a3">Іноді<br>
+        <input type="radio" name="q5" class="a4">Часто<br>
+        <input type="radio" name="q5" class="a5">Дуже часто<br>
+    </div>
+    6. Якщо ви з’їли занадто багато, чи їсте ви менше, ніж зазвичай, наступні дні?»<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q6" class="a1">Ніколи<br>
+        <input type="radio" name="q6" class="a2">Рідко<br>
+        <input type="radio" name="q6" class="a3">Іноді<br>
+        <input type="radio" name="q6" class="a4">Часто<br>
+        <input type="radio" name="q6" class="a5">Дуже часто<br>
+    </div>
+    7. Чи намагаєтеся ви їсти менше, щоб не погладшати?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q7" class="a1">Ніколи<br>
+        <input type="radio" name="q7" class="a2">Рідко<br>
+        <input type="radio" name="q7" class="a3">Іноді<br>
+        <input type="radio" name="q7" class="a4">Часто<br>
+        <input type="radio" name="q7" class="a5">Дуже часто<br>
+    </div>
+    8. Як часто ви намагаєтеся не їсти між прийомами їжі, тому що стежите за своєю вагою?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q8" class="a1">Ніколи<br>
+        <input type="radio" name="q8" class="a2">Рідко<br>
+        <input type="radio" name="q8" class="a3">Іноді<br>
+        <input type="radio" name="q8" class="a4">Часто<br>
+        <input type="radio" name="q8" class="a5">Дуже часто<br>
+    </div>
+    9. Як часто ввечері ви намагаєтеся не їсти, тому що стежите за своєю вагою?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q9" class="a1">Ніколи<br>
+        <input type="radio" name="q9" class="a2">Рідко<br>
+        <input type="radio" name="q9" class="a3">Іноді<br>
+        <input type="radio" name="q9" class="a4">Часто<br>
+        <input type="radio" name="q9" class="a5">Дуже часто<br>
+    </div>
+    10. Чи має значення ваша вага, коли ви їсте?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q10" class="a1">Ніколи<br>
+        <input type="radio" name="q10" class="a2">Рідко<br>
+        <input type="radio" name="q10" class="a3">Іноді<br>
+        <input type="radio" name="q10" class="a4">Часто<br>
+        <input type="radio" name="q10" class="a5">Дуже часто<br>
+    </div>
+    11. Чи є у вас бажання їсти, коли ви роздратовані?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q11" class="a1">Ніколи<br>
+        <input type="radio" name="q11" class="a2">Рідко<br>
+        <input type="radio" name="q11" class="a3">Іноді<br>
+        <input type="radio" name="q11" class="a4">Часто<br>
+        <input type="radio" name="q11" class="a5">Дуже часто<br>
+    </div>
+    12. Чи є у вас бажання їсти, коли вам нічого робити?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q12" class="a1">Ніколи<br>
+        <input type="radio" name="q12" class="a2">Рідко<br>
+        <input type="radio" name="q12" class="a3">Іноді<br>
+        <input type="radio" name="q12" class="a4">Часто<br>
+        <input type="radio" name="q12" class="a5">Дуже часто<br>
+    </div>
+    13. Чи є у вас бажання їсти, коли ви пригнічені чи збентежені?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q13" class="a1">Ніколи<br>
+        <input type="radio" name="q13" class="a2">Рідко<br>
+        <input type="radio" name="q13" class="a3">Іноді<br>
+        <input type="radio" name="q13" class="a4">Часто<br>
+        <input type="radio" name="q13" class="a5">Дуже часто<br>
+    </div>
+    14. Чи є у вас бажання поїсти, коли вам самотньо?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q14" class="a1">Ніколи<br>
+        <input type="radio" name="q14" class="a2">Рідко<br>
+        <input type="radio" name="q14" class="a3">Іноді<br>
+        <input type="radio" name="q14" class="a4">Часто<br>
+        <input type="radio" name="q14" class="a5">Дуже часто<br>
+    </div>
+    15. Чи є у вас бажання їсти, коли вас хтось підводить?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q15" class="a1">Ніколи<br>
+        <input type="radio" name="q15" class="a2">Рідко<br>
+        <input type="radio" name="q15" class="a3">Іноді<br>
+        <input type="radio" name="q15" class="a4">Часто<br>
+        <input type="radio" name="q15" class="a5">Дуже часто<br>
+    </div>
+    16. Чи виникає у вас бажання їсти, коли вам щось перешкоджає, встає на вашому шляху?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q16" class="a1">Ніколи<br>
+        <input type="radio" name="q16" class="a2">Рідко<br>
+        <input type="radio" name="q16" class="a3">Іноді<br>
+        <input type="radio" name="q16" class="a4">Часто<br>
+        <input type="radio" name="q16" class="a5">Дуже часто<br>
+    </div>
+    17. Чи виникає у вас бажання їсти, коли наближається щось неприємне?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q17" class="a1">Ніколи<br>
+        <input type="radio" name="q17" class="a2">Рідко<br>
+        <input type="radio" name="q17" class="a3">Іноді<br>
+        <input type="radio" name="q17" class="a4">Часто<br>
+        <input type="radio" name="q17" class="a5">Дуже часто<br>
+    </div>
+    18. Чи виникає у вас бажання їсти, коли ви хвилюєтесь чи напружені?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q18" class="a1">Ніколи<br>
+        <input type="radio" name="q18" class="a2">Рідко<br>
+        <input type="radio" name="q18" class="a3">Іноді<br>
+        <input type="radio" name="q18" class="a4">Часто<br>
+        <input type="radio" name="q18" class="a5">Дуже часто<br>
+    </div>
+    19. Чи є у вас бажання їсти, коли справи йдуть проти вас?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q19" class="a1">Ніколи<br>
+        <input type="radio" name="q19" class="a2">Рідко<br>
+        <input type="radio" name="q19" class="a3">Іноді<br>
+        <input type="radio" name="q19" class="a4">Часто<br>
+        <input type="radio" name="q19" class="a5">Дуже часто<br>
+    </div>
+    20. Чи є у вас бажання їсти, коли ви налякані?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q20" class="a1">Ніколи<br>
+        <input type="radio" name="q20" class="a2">Рідко<br>
+        <input type="radio" name="q20" class="a3">Іноді<br>
+        <input type="radio" name="q20" class="a4">Часто<br>
+        <input type="radio" name="q20" class="a5">Дуже часто<br>
+    </div>
+    21. Чи виникає у вас бажання їсти, коли ви розчаровані?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q21" class="a1">Ніколи<br>
+        <input type="radio" name="q21" class="a2">Рідко<br>
+        <input type="radio" name="q21" class="a3">Іноді<br>
+        <input type="radio" name="q21" class="a4">Часто<br>
+        <input type="radio" name="q21" class="a5">Дуже часто<br>
+    </div>
+    22. Чи виникає у вас бажання їсти, коли ви схвильовані чи засмучені?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q22" class="a1">Ніколи<br>
+        <input type="radio" name="q22" class="a2">Рідко<br>
+        <input type="radio" name="q22" class="a3">Іноді<br>
+        <input type="radio" name="q22" class="a4">Часто<br>
+        <input type="radio" name="q22" class="a5">Дуже часто<br>
+    </div>
+    23. Чи є у вас бажання їсти, коли вам нудно?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q23" class="a1">Ніколи<br>
+        <input type="radio" name="q23" class="a2">Рідко<br>
+        <input type="radio" name="q23" class="a3">Іноді<br>
+        <input type="radio" name="q23" class="a4">Часто<br>
+        <input type="radio" name="q23" class="a5">Дуже часто<br>
+    </div>
+    24. Якщо їжа вам смакує, ви їсте більше, ніж зазвичай?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q24" class="a1">Ніколи<br>
+        <input type="radio" name="q24" class="a2">Рідко<br>
+        <input type="radio" name="q24" class="a3">Іноді<br>
+        <input type="radio" name="q24" class="a4">Часто<br>
+        <input type="radio" name="q24" class="a5">Дуже часто<br>
+    </div>
+    25. Якщо їжа добре пахне і виглядає, ви їсте більше, ніж зазвичай?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q25" class="a1">Ніколи<br>
+        <input type="radio" name="q25" class="a2">Рідко<br>
+        <input type="radio" name="q25" class="a3">Іноді<br>
+        <input type="radio" name="q25" class="a4">Часто<br>
+        <input type="radio" name="q25" class="a5">Дуже часто<br>
+    </div>
+    26. Якщо ви бачите або відчуваєте запах смачої їжі, чи є у вас бажання це з’їсти?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q26" class="a1">Ніколи<br>
+        <input type="radio" name="q26" class="a2">Рідко<br>
+        <input type="radio" name="q26" class="a3">Іноді<br>
+        <input type="radio" name="q26" class="a4">Часто<br>
+        <input type="radio" name="q26" class="a5">Дуже часто<br>
+    </div>
+    27. Якщо у вас є щось смачне, ви їсте це відразу?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q27" class="a1">Ніколи<br>
+        <input type="radio" name="q27" class="a2">Рідко<br>
+        <input type="radio" name="q27" class="a3">Іноді<br>
+        <input type="radio" name="q27" class="a4">Часто<br>
+        <input type="radio" name="q27" class="a5">Дуже часто<br>
+    </div>
+    28. Якщо ви проходите повз пекарню, у вас виникає бажання купити щось смачне?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q28" class="a1">Ніколи<br>
+        <input type="radio" name="q28" class="a2">Рідко<br>
+        <input type="radio" name="q28" class="a3">Іноді<br>
+        <input type="radio" name="q28" class="a4">Часто<br>
+        <input type="radio" name="q28" class="a5">Дуже часто<br>
+    </div>
+    29. Якщо ви проходите повз закусочну або кафе, у вас є бажання купити щось смачне?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q29" class="a1">Ніколи<br>
+        <input type="radio" name="q29" class="a2">Рідко<br>
+        <input type="radio" name="q29" class="a3">Іноді<br>
+        <input type="radio" name="q29" class="a4">Часто<br>
+        <input type="radio" name="q29" class="a5">Дуже часто<br>
+    </div>
+    30. Якщо ви бачите, як їдять інші, чи виникає у вас бажання їсти?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q30" class="a1">Ніколи<br>
+        <input type="radio" name="q30" class="a2">Рідко<br>
+        <input type="radio" name="q30" class="a3">Іноді<br>
+        <input type="radio" name="q30" class="a4">Часто<br>
+        <input type="radio" name="q30" class="a5">Дуже часто<br>
+    </div>
+    31. Чи можете ви встояти перед смачною їжею?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q31" class="a5">Ніколи<br>
+        <input type="radio" name="q31" class="a4">Рідко<br>
+        <input type="radio" name="q31" class="a3">Іноді<br>
+        <input type="radio" name="q31" class="a2">Часто<br>
+        <input type="radio" name="q31" class="a1">Дуже часто<br>
+    </div>
+    32. Ви їсте більше, ніж зазвичай, коли бачите, як інші їдять?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q32" class="a1">Ніколи<br>
+        <input type="radio" name="q32" class="a2">Рідко<br>
+        <input type="radio" name="q32" class="a3">Іноді<br>
+        <input type="radio" name="q32" class="a4">Часто<br>
+        <input type="radio" name="q32" class="a5">Дуже часто<br>
+    </div>
+    33. Готуючи їжу, ви схильні щось з'їсти?<br>
+    <div style="margin-left: 20px;padding:3px;">
+        <input type="radio" name="q33" class="a1">Ніколи<br>
+        <input type="radio" name="q33" class="a2">Рідко<br>
+        <input type="radio" name="q33" class="a3">Іноді<br>
+        <input type="radio" name="q33" class="a4">Часто<br>
+        <input type="radio" name="q33" class="a5">Дуже часто<br>
+    <div id="result_button"> <button onclick="calc_r()" class="btn">Результат</button> </div>
+    </div>
+
+</div>
+
+<div id="results" class="display_none">
+
+
+
+
+
+    <b id="scales-score">Ваш результат:</b> <br>
+    Обмежувальна харчова поведінка: <b><span id="score1"></span> балів </b><br>
+    Емоційна харчова поведінка: <b><span id="score2"></span> балів </b><br>
+    Екстернальна харчова поведінка: <b><span id="score3"></span> балів </b><br>
+
+    <h3>Інтерпретація результатів</h3>
+    Обмежувальна харчова поведінка (діапазон: 10-50 балів) характеризується навмисними зусиллями, спрямованими на досягнення або підтримку бажаної ваги у вигляді самообмеження в харчуванні.<br>
+    <br>
+    Емоційна харчова поведінка (діапазон: 13-65 балів) – бажання поїсти виникає у відповідь на стани з негативними (роздратування, пригніченість, гнів, тривога та інш.) та змішаними емоціями (коли нічого робити, самотньо, нудьга чи збудження).<br>
+    <br>
+    Екстернальна харчова поведінка (діапазон: 10-50 балів) - бажання поїсти стимулює не реальне почуття голоду, а зовнішній вигляд їжі, її запах, текстура або вид інших людей, які вживають їжу.<br>
+    <br>
+    За деякими даними, значення для людей із нормальною вагою становлять:<br>
+    Обмежувальна харчова поведінка: 24 бали<br>
+    Емоційна харчова поведінка: 23 бали<br>
+    Екстернальна харчова поведінка: 27 балів<br>
+    <br>
+
+
+</div>
+
+
+<br>
+
+
+<script type="text/javascript">
+    function calc_r() {
+        var ans_1 = [], ans_2 = [], ans_3 = [], ans_4 = [], ans_5 = [];
+        var radios_a1 = document.getElementsByClassName("a1");
+        var radios_a2 = document.getElementsByClassName("a2");
+        var radios_a3 = document.getElementsByClassName("a3");
+        var radios_a4 = document.getElementsByClassName("a4");
+        var radios_a5 = document.getElementsByClassName("a5");
+
+        var score =[];
+        //---------------------------------------------------------------------
+        for (var i = 0; i < radios_a1.length; i++) {
+
+            if (radios_a1[i].checked) {
+                ans_1.push(1);
+                ans_2.push(0);ans_3.push(0);ans_4.push(0);ans_5.push(0);
+                score.push(1);
+            }
+            if (radios_a2[i].checked) {
+                ans_2.push(1);
+                ans_1.push(0);ans_3.push(0);ans_4.push(0);ans_5.push(0);
+                score.push(2);
+            }
+            if (radios_a3[i].checked) {
+                ans_3.push(1);
+                ans_1.push(0);ans_2.push(0);ans_4.push(0);ans_5.push(0);
+                score.push(3);
+            }
+            if (radios_a4[i].checked) {
+                ans_4.push(1);
+                ans_1.push(0);ans_2.push(0);ans_3.push(0);ans_5.push(0);
+                score.push(4);
+            }
+           if (radios_a5[i].checked) {
+                ans_5.push(1);
+                ans_1.push(0);ans_2.push(0);ans_3.push(0);ans_4.push(0);
+                score.push(5);
+            }
+
         }
-    </style>
-</head>
-<body style="height: 100svh;">
-    <iframe src="https://www.eztests.xyz/tests/eating_debq/" width="100%;" height="100%;" style="min-height: 100svh;">
-        Ваш браузер не поддерживает iframe.
-    </iframe>
+
+        var sum_a1 = ans_1.reduce(function(ans_1, b) { return ans_1 + b; }, 0);
+        var sum_a2 = ans_2.reduce(function(ans_2, b) { return ans_2 + b; }, 0);
+        var sum_a3 = ans_3.reduce(function(ans_3, b) { return ans_3 + b; }, 0);
+        var sum_a4 = ans_4.reduce(function(ans_4, b) { return ans_4 + b; }, 0);
+        var sum_a5 = ans_5.reduce(function(ans_5, b) { return ans_5 + b; }, 0);
+
+
+        if (sum_a1+sum_a2+sum_a3+sum_a4+sum_a5!=radios_a1.length) {
+            alert('Ви відповіли не на всі запитання');
+        }
+        else{
+
+            var factor_1 = score[1-1]+score[2-1]+score[3-1]+score[4-1]+score[5-1]+score[6-1]+
+                           score[7-1]+score[8-1]+score[9-1]+score[10-1];
+            var factor_2 = score[11-1]+score[12-1]+score[13-1]+score[14-1]+score[15-1]+score[16-1]+
+                           score[17-1]+score[18-1]+score[19-1]+score[20-1]+score[21-1]+score[22-1]+
+                           score[23-1];
+            var factor_3 = score[24-1]+score[25-1]+score[26-1]+score[27-1]+score[28-1]+score[29-1]+
+                           score[30-1]+score[31-1]+score[32-1]+score[33-1];
+            score = score.toString();
+            score = score.split(',').join(';');
+
+            var factors = [factor_1, factor_2, factor_3];
+
+            // res-block
+            var div_results = document.getElementById("results");
+            div_results.className = 'test_res';
+
+            for (var i = 0; i < factors.length; i++) {
+                var p_score = document.getElementById("score" + (i + 1).toString());
+                p_score.appendChild(document.createTextNode(factors[i]));
+            }
+
+
+            var res_button = document.getElementById("result_button");
+            res_button.scrollIntoView(true);
+            res_button.className = 'display_none';
+
+            if (false) {
+
+            }
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
 </body></html>
