@@ -1,7 +1,7 @@
 import time
 
 from aiogram.types import Message
-from aiogram.exceptions import TelegramForbiddenError
+from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
 from asgiref.sync import sync_to_async
 
 from ORM.models import User
@@ -16,7 +16,7 @@ async def send_admin_notification(notification_message: str) -> list:
     for u_id in user_ids:
         try:
             sent_messages.append(await bot.send_message(u_id, notification_message))
-        except TelegramForbiddenError as ex:
+        except (TelegramForbiddenError, TelegramBadRequest) as ex:
             continue
 
     return sent_messages
