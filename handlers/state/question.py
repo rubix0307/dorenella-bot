@@ -1,4 +1,5 @@
 from aiogram import F
+from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters.command import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
@@ -55,7 +56,12 @@ async def cansel(message: Message, state: FSMContext) -> None:
     info_msg_id = data.get('info_msg_id')
     if info_msg_id:
         await bot.delete_message(chat_id=message.chat.id, message_id=info_msg_id)
-    await message.delete()
+
+    try:
+        await message.delete()
+    except TelegramBadRequest:
+        pass
+
     await state.clear()
     await message.answer('Скасовано',reply_markup=ReplyKeyboardRemove(),)
 

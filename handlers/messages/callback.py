@@ -1,4 +1,5 @@
 from aiogram import F
+from aiogram.exceptions import TelegramBadRequest
 from aiogram.types import CallbackQuery
 from aiogram.types import FSInputFile
 
@@ -25,7 +26,10 @@ async def answer(callback_query: CallbackQuery, callback_data: MenuAction):
                 reply_markup=MenuKeyboard().get_services(),
                 disable_notification=True,
             )
-            await message.delete()
+            try:
+                await message.delete()
+            except TelegramBadRequest:
+                pass
 
         case 'trust':
             caption = await SystemText.objects.aget(menu='trust')
@@ -49,7 +53,11 @@ async def answer(callback_query: CallbackQuery, callback_data: MenuAction):
                 reply_markup=MenuKeyboard().get_test(),
                 disable_notification=True,
             )
-            await message.delete()
+            try:
+                await message.delete()
+            except TelegramBadRequest:
+                pass
+
         case 'counseling':
             caption = await SystemText.objects.aget(menu='counseling')
             photo = FSInputFile('media/counseling.jpg')
@@ -59,7 +67,10 @@ async def answer(callback_query: CallbackQuery, callback_data: MenuAction):
                 reply_markup=MenuKeyboard().get_counseling(),
                 disable_notification=True,
             )
-            await message.delete()
+            try:
+                await message.delete()
+            except TelegramBadRequest:
+                pass
 
         case 'accompaniment':
             caption = await SystemText.objects.aget(menu='accompaniment')
@@ -70,7 +81,10 @@ async def answer(callback_query: CallbackQuery, callback_data: MenuAction):
                 reply_markup=MenuKeyboard().get_accompaniment(),
                 disable_notification=True
             )
-            await message.delete()
+            try:
+                await message.delete()
+            except TelegramBadRequest:
+                pass
 
         case 'accompaniment_detail':
             caption = await SystemText.objects.aget(menu='accompaniment_detail')

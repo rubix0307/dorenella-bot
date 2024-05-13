@@ -1,6 +1,7 @@
 import time
 
 from aiogram import types
+from aiogram.exceptions import TelegramBadRequest
 from aiogram.filters import CommandStart, Command
 from aiogram.types import FSInputFile
 from django.db.models.manager import Manager
@@ -19,7 +20,11 @@ async def start(message: types.Message) -> None:
     caption = await SystemText.objects.aget(menu='start')
     photo = FSInputFile('media/start.jpg')
     await message.answer_photo(photo=photo, caption=caption.text.format_map(locals()), reply_markup=MenuKeyboard().get_start())
-    await message.delete()
+
+    try:
+        await message.delete()
+    except TelegramBadRequest:
+        pass
 
 
 
