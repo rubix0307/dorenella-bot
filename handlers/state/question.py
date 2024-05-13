@@ -32,8 +32,17 @@ def user_authorized(function):
 async def ask(callback_query: CallbackQuery, callback_data: MenuAction, state: FSMContext, *args, **kwargs):
 
     await state.set_state(Question.question)
+
+    text = '\n'.join([
+        f'Тут ви можете вказати додаткові питання, якщо вони виникли, щодо особистої роботи або форматів☺️',
+        f'',
+        f'Кожна людина індивідуальна та потребує унікального підходу, тож моя задача забезпечити вас цим🩷',
+        f'',
+        f'Для скасування: /cancel',
+    ])
+
     info_msg = await bot.send_message(chat_id=callback_query.message.chat.id,
-        text='Напиши своє запитання\nДля скасування: /cancel',
+        text=text,
         reply_markup=ReplyKeyboardRemove(),
     )
     await state.update_data(info_msg_id=info_msg.message_id)
