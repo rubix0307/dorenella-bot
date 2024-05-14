@@ -114,7 +114,7 @@ class MenuKeyboard:
 
     def get_start(self):
         self.builder.row(MenuButton.trust.value)
-        self.builder.row(MenuButton.services.value, MenuButton.ask_me.value)
+        self.builder.row(MenuButton.services.value) # MenuButton.ask_me.value deactivated
         self.builder.row(MenuButton.test.value)
         return self.builder.as_markup()
     def get_services(self) -> InlineKeyboardMarkup:
