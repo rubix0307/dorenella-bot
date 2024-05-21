@@ -22,7 +22,7 @@ async def send_admin_notification(notification_message: str) -> list:
     return sent_messages
 
 
-def update_user_info(message: Message) -> (User, bool):
+def update_user_info(message: Message, **kwargs) -> (User, bool):
 
     defaults = {
         'first_name': message.from_user.first_name,
@@ -38,6 +38,10 @@ def update_user_info(message: Message) -> (User, bool):
     if message.contact:
         defaults.update({'phone_number': message.contact.phone_number})
 
+    if 'instagram' in kwargs.keys():
+        instagram = kwargs['instagram']
+        defaults.update({'instagram': instagram})
+
     user, is_created = User.objects.update_or_create(id=message.from_user.id,
                                                             defaults=defaults,
                                                             create_defaults=defaults | {
@@ -46,5 +50,5 @@ def update_user_info(message: Message) -> (User, bool):
                                                             )
     return user, is_created
 
-async def aupdate_user_info(message: Message) -> (User, bool):
-    return await sync_to_async(update_user_info)(message)
+async def aupdate_user_info(message: Message, **kwargs) -> (User, bool):
+    return await sync_to_async(update_user_info)(message, **kwargs)

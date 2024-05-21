@@ -16,6 +16,7 @@ class User(models.Model):
     url = models.CharField(max_length=255, null=True)
     username = models.CharField(max_length=255, null=True)
     phone_number = models.CharField(max_length=255, null=True)
+    instagram = models.CharField(max_length=255, null=True)
 
     date_added = models.BigIntegerField(null=True)
 
